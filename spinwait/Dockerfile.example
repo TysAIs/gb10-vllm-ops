@@ -1,0 +1,9 @@
+FROM vllm/vllm-openai:latest
+
+# GB10 vLLM spin-wait fix — see README.md
+# https://nacyot.github.io/artifacts/vllm-spin-wait-gb10/
+RUN f=$(find /usr/local/lib -name shm_broadcast.py -path "*device_communicators*" 2>/dev/null | head -1); \
+    if [ -n "$f" ]; then \
+      sed -i "s/busy_loop_s: float = 1,/busy_loop_s: float = 0.002,/" "$f"; \
+      grep -n "busy_loop_s: float" "$f"; \
+    fi
