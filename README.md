@@ -18,6 +18,9 @@ into the shared SoC thermal budget. Fix: `1s → 0.002s`.
 - Builds a new `<image>-spinfix` tag; never modifies the original. See `spinwait/README.md`.
 - Attribution: original analysis by **nacyot** (Korean), English write-up + tooling by
   **drowzeys** (MIT). Included here with credit.
+- **Now auto-applied upstream** (2026-08-19): the MiaAI DS4 recipe's start script ships
+  `patches/hotfix-gb10-spin-wait.sh` and applies it at container start — if you run that
+  recipe, you already have the fix (`DSPARK_SKIP_SPIN_WAIT_HOTFIX=1` disables).
 
 ## 2. Clock-cap sweep (`sweep/`)
 Empirical 2190 / 2200 / 2300 MHz GPU-cap sweep to find the thermal/throughput knee on a

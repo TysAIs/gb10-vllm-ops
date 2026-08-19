@@ -1,0 +1,17 @@
+# secrets / local state — NEVER commit
+.env
+*.env
+*.env.*
+!*.env.sample
+*.pem
+*.key
+*.p12
+
+# runtime artifacts
+*.log
+results/
+__pycache__/
+*.pyc
+
+# os noise
+.DS_Store
