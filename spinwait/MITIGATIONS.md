@@ -156,7 +156,7 @@ host or a whole cluster, colour-coded, with `--watch` and `--csv` modes. Set thr
 
 ```bash
 ./fleet-temps.sh                      # local host
-NODES="192.168.0.1 192.168.0.2" ./fleet-temps.sh --watch 10
+NODES="node0 node1" ./fleet-temps.sh --watch 10
 WARN=92 CRIT=99 ./fleet-temps.sh      # anchor to your trip point, not an anecdote
 ```
 
